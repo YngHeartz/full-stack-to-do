@@ -57,7 +57,7 @@ function App() {
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Todo description"
         />
-        <button onClick={addTask}>Todo</button>
+        <button className='glow-on-hover' onClick={addTask}>Todo</button>
       </div>
       <div className="task-list">
         {tasks.map(task => (
@@ -65,10 +65,10 @@ function App() {
             <h3>{task.title}</h3>
             <p>{task.description}</p>
             <div className="task-actions">
-              <button onClick={() => toggleComplete(task.id, task.completed)}>
+              <button className="Mark-as-complete" onClick={() => toggleComplete(task.id, task.completed)}>
                 {task.completed ? 'Mark Incomplete' : 'Mark Complete'}
               </button>
-              <button onClick={() => deleteTask(task.id)}>Delete</button>
+              <button className='delete-task' onClick={() => deleteTask(task.id)}>Delete</button>
             </div>
           </div>
         ))}
